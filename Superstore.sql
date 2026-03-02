@@ -333,13 +333,14 @@ LIMIT 1;
 -- The Consumer segment is the most profitable at $134,119.21 in total profit.
 -- Marketing and sales efforts should prioritize acquiring and retaining Consumer segment customers.
 
---34. Business recommendations based on data.
+--34.Which Region–Sub-Category–Segment combinations generate the highest and lowest profit?
 SELECT region, sub_category, segment,SUM(sales) AS total_sales,SUM(profit) AS total_profit,
 ROUND(SUM(profit)/SUM(sales)*100,2) AS profit_margin_percentage
 FROM SUPERSTORE
 GROUP BY region, sub_category, segment
 ORDER BY total_profit DESC;
 
+--Business recommendations based on data.
 -- Key Recommendations:
 -- 1. STOP heavy discounting immediately — discounts above 20% generate consistent losses.
 -- 2. DISCONTINUE or reprice Tables sub-category (-8.56% margin).
